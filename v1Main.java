@@ -1,4 +1,4 @@
-public class Main {
+public class v1Main {
     public static void main(String[] args) {
         try {
             UserService userService = new UserService();

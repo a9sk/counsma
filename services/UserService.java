@@ -31,7 +31,8 @@ public class UserService {
         String salt = hashService.generateSalt();
         String hashedPassword = hashService.hashPassword(password, salt);
         return hashedPassword;
-
+    }
+    
     private String generateUserId() {
         // Implement unique user ID generation logic here
         return "unique-id"; // Replace with actual ID generation
