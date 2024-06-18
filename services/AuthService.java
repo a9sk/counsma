@@ -13,16 +13,10 @@ public class AuthService {
             user = userService.getUserByEmail(usernameOrEmail);
         }
 
-        if (user == null || !user.getHashedPassword().equals(hashPassword(password, user.getSalt()))) {
+        if (user == null || !user.getHashedPassword().equals(HashService.hashPassword(password, user.getSalt()))) {
             throw new Exception("Invalid username/email or password.");
         }
 
         return tokenService.generateToken(user);
-    }
-
-    private String hashPassword(String password, byte[] salt) {
-        HashService hashService = new HashService();
-        String hashedPassword = hashService.hashPassword(password, salt);
-        return hashedPassword;
     }
 }
