@@ -1,11 +1,13 @@
+import java.util.UUID;
+
 public class User {
-    private String id;
+    private UUID id;
     private String username;
     private String email;
     private String hashedPassword;
     private byte[] salt;
 
-    public User(String id, String username, String email, String hashedPassword, byte[] salt) {
+    public User(UUID id, String username, String email, String hashedPassword, byte[] salt) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -21,7 +23,7 @@ public class User {
         return hashedPassword;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 

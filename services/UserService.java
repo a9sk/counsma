@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class UserService {
     private Map<String, User> usersByUsername = new HashMap<>();
@@ -11,7 +12,7 @@ public class UserService {
         }
         byte[] salt = HashService.generateSalt();
         String hashedPassword = HashService.hashPassword(password, salt);
-        String id = generateUserId();
+        UUID id = generateUserId();
         User user = new User(id, username, email, hashedPassword, salt);
 
         usersByUsername.put(username, user);
@@ -26,9 +27,8 @@ public class UserService {
         return usersByEmail.get(email);
     }
     
-    private String generateUserId() {
-        // Implement unique user ID generation logic here
-        return "unique-id"; // Replace with actual ID generation
+    private UUID generateUserId() {
+        UUID uniqueKey = UUID.randomUUID();
+        return uniqueKey;
     }
 }
-

@@ -15,7 +15,8 @@ public class v1Main {
             // Validate the token
             User user = tokenService.validateToken(token);
             System.out.println("Authenticated user: " + user.getUsername());
-
+            
+            System.out.println("User:" + user.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
