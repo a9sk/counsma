@@ -11,5 +11,19 @@ public class User {
         this.hashedPassword = hashedPassword;
     }
 
-    // Getters and setters for all fields
+    public String getEmail() {
+        return email;
+    }
+
+    public String getHashedPassword() {
+        return hashedPassword;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
 }
