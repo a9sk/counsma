@@ -21,7 +21,9 @@ public class AuthService {
     }
 
     private String hashPassword(String password) {
-        // Implement password hashing logic here
-        return password; // Replace with actual hashing
+        HashService hashService = new HashService();
+        String salt = hashService.generateSalt();
+        String hashedPassword = hashService.hashPassword(password, salt);
+        return hashedPassword;
     }
 }
