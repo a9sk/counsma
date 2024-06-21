@@ -13,7 +13,7 @@ public class UserService {
         byte[] salt = HashService.generateSalt();
         String hashedPassword = HashService.hashPassword(password, salt);
         UUID id = generateUserId();
-        User user = new User(id, username, email, hashedPassword, salt);
+        User user = new User(id, username, email, hashedPassword, salt, Role.USER);
 
         usersByUsername.put(username, user);
         usersByEmail.put(email, user);
