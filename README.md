@@ -4,7 +4,7 @@ Basic java auth implementation for future projects.
 
 ## TODO
 
-- [x] Change hash maps to an actual database...
+- [] Change hash maps to an actual database...
 
 ## Licence
 
